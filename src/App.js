@@ -1,8 +1,17 @@
-import logo from "./logo.svg";
+import { useState } from "react";
 import "./App.css";
+import { InputIP } from "./components/InputIP";
+import { Result } from "./components/Result";
 
 function App() {
-  return <div className="App"></div>;
+  const [address, setAddress] = useState("");
+
+  return (
+    <div className="App">
+      <InputIP address={address} setAddress={setAddress} />
+      <Result address={address} />
+    </div>
+  );
 }
 
 export default App;
