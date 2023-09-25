@@ -1,0 +1,51 @@
+.input_wrap {
+  background-image: url(/public/images/pattern-bg-desktop.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding-top: 30px;
+  gap: 25px;
+  position: relative;
+}
+
+.title {
+  font-size: var(--size-title);
+  color: #fff;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px; /* 93.75% */
+  letter-spacing: -0.286px;
+}
+.input_form {
+  width: 555px;
+  height: 58px;
+  display: flex;
+}
+.submit_button {
+  width: 58px;
+  height: 58px;
+  background-color: black;
+  border-radius: 0 15px 15px 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.input_section {
+  border-radius: 15px 0 0 15px;
+  background: #fff;
+  box-shadow: 0px 50px 50px -25px rgba(0, 0, 0, 0.1);
+  outline: none;
+  border: none;
+  width: 497px;
+  height: 58px;
+  padding: 20px 24px;
+  font-size: var(--size-input);
+}
+
+.arrow_icon {
+  color: white;
+}
