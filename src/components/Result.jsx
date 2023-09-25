@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "./Card";
 import { Map } from "./Map";
+import styles from "./Results.module.css";
 
 export const Result = ({ address }) => {
   /** api 불러와서 처리 */
@@ -34,19 +35,21 @@ export const Result = ({ address }) => {
   }, [address]);
 
   return (
-    <div>
-      {isLoading ? (
-        <Card ip={ipGeoInfo?.ip} geoInfo={ipGeoInfo} />
-      ) : (
-        <p>Loading</p>
-      )}
+    <section className={styles.result_wrap}>
+      <div className={styles.card_absolute}>
+        {isLoading ? (
+          <Card ip={ipGeoInfo?.ip} geoInfo={ipGeoInfo} />
+        ) : (
+          <p>Loading</p>
+        )}
+      </div>
 
       {isLoading ? (
         <Map long={ipGeoInfo?.longitude} lat={ipGeoInfo?.latitude} />
       ) : (
         <p>Loading</p>
       )}
-    </div>
+    </section>
   );
 };
 

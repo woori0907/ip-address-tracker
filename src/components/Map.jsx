@@ -10,7 +10,7 @@ export const Map = ({ long, lat }) => {
         center={position}
         zoom={13}
         scrollWheelZoom={false}
-        style={{ height: "600px" }}
+        style={{ height: "70vh" }}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

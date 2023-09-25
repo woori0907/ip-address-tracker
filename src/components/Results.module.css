@@ -1,0 +1,10 @@
+.result_wrap {
+  position: relative;
+  width: 100%;
+}
+.card_absolute {
+  position: absolute;
+  top: -80px;
+  left: 387px;
+  margin: 0 auto;
+}
