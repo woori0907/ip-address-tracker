@@ -9,20 +9,19 @@ export const Result = ({ address }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const getIpGeo = async (address) => {
-    await fetch(
-      `https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.REACT_APP_GEO_API_KEY}&ip=${address}`
-    )
+    await fetch(`http://ip-api.com/json/${address}`)
       .then((response) => response.json())
       .then((data) => {
         setGeoInfo(data);
+        console.log(data);
         setIsLoading(true);
       });
   };
 
   const initResult = async () => {
-    const myIp = await fetch("https://api.ipgeolocation.io/getip")
+    const myIp = await fetch("http://ip-api.com/json/")
       .then((response) => response.json())
-      .then((data) => data.ip);
+      .then((data) => data.query);
     getIpGeo(myIp);
   };
   useEffect(() => {
@@ -30,7 +29,6 @@ export const Result = ({ address }) => {
     initResult();
   }, []);
   useEffect(() => {
-    /** 맨처음은 접속자 IP 가져와서 보여주기 */
     getIpGeo(address);
   }, [address]);
 
@@ -38,14 +36,14 @@ export const Result = ({ address }) => {
     <section className={styles.result_wrap}>
       <div className={styles.card_absolute}>
         {isLoading ? (
-          <Card ip={ipGeoInfo?.ip} geoInfo={ipGeoInfo} />
+          <Card ip={ipGeoInfo?.query} geoInfo={ipGeoInfo} />
         ) : (
           <p>Loading</p>
         )}
       </div>
 
       {isLoading ? (
-        <Map long={ipGeoInfo?.longitude} lat={ipGeoInfo?.latitude} />
+        <Map long={ipGeoInfo?.lon} lat={ipGeoInfo?.lat} />
       ) : (
         <p>Loading</p>
       )}
