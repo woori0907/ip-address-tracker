@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
+import { MapCenter } from "./MapCenter";
 
 export const Map = ({ long, lat }) => {
   const position = [lat, long];
@@ -21,6 +22,7 @@ export const Map = ({ long, lat }) => {
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>
         </Marker>
+        <MapCenter lat={lat} long={long} />
       </MapContainer>
     </section>
   );
