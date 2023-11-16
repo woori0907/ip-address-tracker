@@ -9,7 +9,7 @@ export const Result = ({ address }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const getIpGeo = async (address) => {
-    await fetch(`http://ip-api.com/json/${address}`)
+    await fetch(`https://ipapi.co/${address}/json/`)
       .then((response) => response.json())
       .then((data) => {
         setGeoInfo(data);
@@ -19,9 +19,9 @@ export const Result = ({ address }) => {
   };
 
   const initResult = async () => {
-    const myIp = await fetch("http://ip-api.com/json/")
+    const myIp = await fetch("http://ipapi.co/json/")
       .then((response) => response.json())
-      .then((data) => data.query);
+      .then((data) => data.ip);
     getIpGeo(myIp);
   };
   useEffect(() => {
@@ -36,14 +36,14 @@ export const Result = ({ address }) => {
     <section className={styles.result_wrap}>
       <div className={styles.card_absolute}>
         {isLoading ? (
-          <Card ip={ipGeoInfo?.query} geoInfo={ipGeoInfo} />
+          <Card ip={ipGeoInfo?.ip} geoInfo={ipGeoInfo} />
         ) : (
           <p>Loading</p>
         )}
       </div>
 
       {isLoading ? (
-        <Map long={ipGeoInfo?.lon} lat={ipGeoInfo?.lat} />
+        <Map long={ipGeoInfo?.longitude} lat={ipGeoInfo?.latitude} />
       ) : (
         <p>Loading</p>
       )}
