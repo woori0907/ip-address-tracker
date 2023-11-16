@@ -31,7 +31,6 @@
   font-style: normal;
   opacity: 0.4987;
   letter-spacing: 1.75px;
-
   line-height: normal;
 }
 .result_text {
@@ -41,4 +40,26 @@
   font-weight: 500;
   line-height: 30px;
   letter-spacing: -0.232px;
+}
+
+@media screen and (min-width: 375px) and (max-width: 720px) {
+  .result_wrap {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 30px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .result_group {
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .short_line {
+    display: none;
+  }
 }

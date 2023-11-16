@@ -8,3 +8,12 @@
   left: 387px;
   margin: 0 auto;
 }
+
+@media screen and (min-width: 375px) and (max-width: 720px) {
+  .card_absolute {
+    top: -120px;
+    left: 0;
+    padding: 30px;
+    width: 100%;
+  }
+}

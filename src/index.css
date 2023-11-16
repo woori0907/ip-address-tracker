@@ -8,6 +8,15 @@
   --size-input: 18px;
 }
 
+@media screen and (min-width: 375px) {
+  :root {
+    --size-title: 26px;
+    --size-result: 20px;
+    --size-result-label: 10px;
+    --size-input: 18px;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

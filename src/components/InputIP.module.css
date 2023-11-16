@@ -49,3 +49,16 @@
 .arrow_icon {
   color: white;
 }
+
+@media screen and (min-width: 375px) and (max-width: 720px) {
+  .input_wrap {
+    width: 100%;
+    padding: 30px;
+  }
+  .input_form {
+    width: 100%;
+  }
+  .input_section {
+    width: 327px;
+  }
+}
